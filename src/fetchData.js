@@ -2,32 +2,49 @@ const fetchData = () => {
     let location = document.getElementById("city");
     let city = location.value;
     let fetchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=fa1c7f10e6e75b7dc652e684202b5bd1`;
+
     
     fetch(fetchUrl, {mode: 'cors'})
     .then((response) => {
         return (response.json())
     })
     .then((response) => {
-        console.log(response);
-        const { temp } = response.main;
-        let loadApiDom = document.getElementById("loadApiDom");
+        const cityName = response.name;
+        const { temp, humidity, pressure } = response.main;
+        const { deg } = response.wind;
+        const { country } = response.sys;
+
+        let displayLocation = document.querySelector(".location");
+        displayLocation.textContent = cityName, country;
+        
+        let loadTemp = document.querySelector(".loadTemp");
         let fahren = Math.round((temp * 9) / (5 + 32));
-        loadApiDom.textContent = fahren;
-
-        // converter 
+        loadTemp.textContent = fahren;
         let celsius = Math.round(((fahren - 32) * 5) / 9);
+        let statusF = document.getElementById("f");
+        let statusC = document.getElementById("c");
+        let loadLetter = document.querySelector(".loadLetter");
+        let loadHumidity = document.querySelector(".humidity");
+        let loadPressure = document.querySelector(".pressure");
+        let loadWind = document.querySelector(".wind");
 
-        // toggle
-        let status = document.querySelector(".inline-block span");
-        status.addEventListener('click', () => {
-            if (status.textContent === "F"){
-                status.textContent = "C";
-                loadApiDom.textContent = celsius;
-            } else {
-                status.textContent = "F";
-                loadApiDom.textContent = fahren;
-            }
-        })
+        loadHumidity.textContent = humidity;
+        loadPressure.textContent = Math.round(pressure);
+        loadWind.textContent = Math.round(deg);
+
+        statusF.addEventListener('click', () => {
+            loadTemp.textContent = fahren;
+            loadLetter.textContent = "F"
+
+        });
+
+        statusC.addEventListener('click', () => {
+            loadTemp.textContent = celsius;
+            loadLetter.textContent = "C"
+        });
+
+
+
     })
     .catch((err) => {
     console.log(err);
