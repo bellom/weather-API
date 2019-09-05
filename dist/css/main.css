@@ -213,10 +213,11 @@
    line-height: 1.5;
    background: #1e202b; }
  
- h1, h2, h3, h4, h5, h6 {
+ h1 {
    font-weight: 700;
-   margin: 0 0 20px;
-   line-height: normal; }
+   margin: -27px 0 20px;
+   line-height: normal;
+  text-align: center; }
  
  hr {
    border: none;
@@ -251,7 +252,12 @@
  /*
   * Reusable Components Style
   */
- .button, form input[type="submit"], form button, form input[type="reset"] {
+ .background {
+   height: 500px;
+   width: 1351px
+ }
+
+  .button, form input[type="submit"], form button, form input[type="reset"] {
    border: none;
    background: #009ad8;
    padding: 10px 20px;
@@ -1202,8 +1208,8 @@
  
  .hero {
    background-size: cover;
-   padding: 70px 0;
-   min-height: 350px; }
+   padding: 44px 0;
+   min-height: 297px; }
  
  .find-location {
    position: relative;
