@@ -1,8 +1,7 @@
 const loadDOM = () => {
     let body  = document.querySelector(".forecast-table");
 
-    body.innerHTML = `<div class="forecast-table">
-                        <div class="container">
+    body.innerHTML =    `<div class="container">
                             <div class="forecast-container">
                                 <div class="today forecast">
                                     <div class="forecast-content">
@@ -50,8 +49,7 @@ const loadDOM = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>`
+                        </div>`
                     
 };
 
