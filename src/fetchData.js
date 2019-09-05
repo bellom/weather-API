@@ -16,12 +16,10 @@ const fetchData = () => {
     })
     .then(response => {
       const cityName = response.name;
+      const { country } = response.sys;
       const { temp, humidity, pressure } = response.main;
       const { deg } = response.wind;
-      const { country } = response.sys;
-
-      displayLocation.textContent = `${cityName}, ${country}`;
-
+      
       let loadTemp = document.querySelector(".loadTemp");
       let fahren = Math.round((temp * 9) / (5 + 32));
       let celsius = Math.round(((fahren - 32) * 5) / 9);
@@ -32,6 +30,7 @@ const fetchData = () => {
       let loadPressure = document.querySelector(".pressure");
       let loadWind = document.querySelector(".wind");
       
+      displayLocation.textContent = `${cityName}, ${country}`;
       loadTemp.textContent = fahren;
       loadHumidity.textContent = humidity;
       loadPressure.textContent = Math.round(pressure);
