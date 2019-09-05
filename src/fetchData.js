@@ -1,3 +1,6 @@
+/* eslint-disable no-redeclare */
+/* global, fetch document */
+
 import loadDOM from "./loadDOM";
 
 const fetchData = () => {
@@ -44,8 +47,9 @@ const fetchData = () => {
         loadLetter.textContent = "C";
       });
     })
-    .catch(err => {
+    .catch((err) => {
       displayLocation.textContent = "Location Not Found !!";
+      return err;
     });
 };
 
