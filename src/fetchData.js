@@ -1,8 +1,6 @@
 /* eslint-disable no-redeclare */
 /* global, fetch document */
 
-import loadDOM from "./loadDOM";
-
 const fetchData = () => {
   let location = document.getElementById("city");
   let city = location.value;
