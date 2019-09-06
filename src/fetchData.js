@@ -1,3 +1,5 @@
+import loadDOM from "./loadDOM";
+
 /* eslint-disable no-redeclare */
 /* global, fetch document */
 
@@ -16,32 +18,34 @@ const fetchData = () => {
       const { country } = response.sys;
       const { temp, humidity, pressure } = response.main;
       const { deg } = response.wind;
-      
       const fahren = Math.round((temp * 9) / (5 + 32));
-      const loadTemp = document.querySelector(".loadTemp");
-      const celsius = Math.round(((fahren - 32) * 5) / 9);
-      const statusF = document.getElementById("f");
-      const statusC = document.getElementById("c");
-      const loadLetter = document.querySelector(".loadLetter");
-      const loadHumidity = document.querySelector(".humidity");
-      const loadPressure = document.querySelector(".pressure");
-      const loadWind = document.querySelector(".wind");
       
-      displayLocation.textContent = `${cityName}, ${country}`;
-      loadTemp.textContent = fahren;
-      loadHumidity.textContent = humidity;
-      loadPressure.textContent = Math.round(pressure);
-      loadWind.textContent = Math.round(deg);
+      loadDOM (temp, pressure, humidity, cityName, country, deg, fahren);
 
-      statusF.addEventListener("click", () => {
-        loadTemp.textContent = fahren;
-        loadLetter.textContent = "F";
-      });
+      // const loadTemp = document.querySelector(".loadTemp");
+      // const celsius = Math.round(((fahren - 32) * 5) / 9);
+      // const statusF = document.getElementById("f");
+      // const statusC = document.getElementById("c");
+      // const loadLetter = document.querySelector(".loadLetter");
+      // const loadHumidity = document.querySelector(".humidity");
+      // const loadPressure = document.querySelector(".pressure");
+      // const loadWind = document.querySelector(".wind");
+      
+      // displayLocation.textContent = `${cityName}, ${country}`;
+      // loadTemp.textContent = fahren;
+      // loadHumidity.textContent = humidity;
+      // loadPressure.textContent = Math.round(pressure);
+      // loadWind.textContent = Math.round(deg);
 
-      statusC.addEventListener("click", () => {
-        loadTemp.textContent = celsius;
-        loadLetter.textContent = "C";
-      });
+      // statusF.addEventListener("click", () => {
+      //   loadTemp.textContent = fahren;
+      //   loadLetter.textContent = "F";
+      // });
+
+      // statusC.addEventListener("click", () => {
+      //   loadTemp.textContent = celsius;
+      //   loadLetter.textContent = "C";
+      // });
     })
     .catch((err) => {
       displayLocation.textContent = "Location Not Found !!";
