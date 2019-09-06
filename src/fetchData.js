@@ -4,7 +4,6 @@
 import loadDOM from "./loadDOM";
 
 const fetchData = () => {
-  loadDOM();
   let location = document.getElementById("city");
   let city = location.value;
   let fetchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=fa1c7f10e6e75b7dc652e684202b5bd1`;
@@ -20,15 +19,15 @@ const fetchData = () => {
       const { temp, humidity, pressure } = response.main;
       const { deg } = response.wind;
       
-      let loadTemp = document.querySelector(".loadTemp");
-      let fahren = Math.round((temp * 9) / (5 + 32));
-      let celsius = Math.round(((fahren - 32) * 5) / 9);
-      let statusF = document.getElementById("f");
-      let statusC = document.getElementById("c");
-      let loadLetter = document.querySelector(".loadLetter");
-      let loadHumidity = document.querySelector(".humidity");
-      let loadPressure = document.querySelector(".pressure");
-      let loadWind = document.querySelector(".wind");
+      const fahren = Math.round((temp * 9) / (5 + 32));
+      const loadTemp = document.querySelector(".loadTemp");
+      const celsius = Math.round(((fahren - 32) * 5) / 9);
+      const statusF = document.getElementById("f");
+      const statusC = document.getElementById("c");
+      const loadLetter = document.querySelector(".loadLetter");
+      const loadHumidity = document.querySelector(".humidity");
+      const loadPressure = document.querySelector(".pressure");
+      const loadWind = document.querySelector(".wind");
       
       displayLocation.textContent = `${cityName}, ${country}`;
       loadTemp.textContent = fahren;
