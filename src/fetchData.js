@@ -4,7 +4,7 @@
 import { loadDOM, displayErr } from "./loadDOM";
 
 const fetchData = () => {
-  let location = document.getElementById("city");
+  const location = document.getElementById("city");
   let city = location.value;
   let fetchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=fa1c7f10e6e75b7dc652e684202b5bd1`;
   
