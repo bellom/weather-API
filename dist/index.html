@@ -1,15 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather API</title>
-</head>
-<body>
-    <h1>weather api</h1>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		<title>Weather App</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./css/main.css">
+	</head>
+	<body>
+		<div class="site-content">
+			<div class="hero">
+				<div><h1>Weather App</h1></div>
+				<div class="container">
+					<form action="#" class="find-location">
+						<input id ="city" type="text" placeholder="Find your location...">
+						<input id="checkBtn" type="submit" value="Find">
+					</form>
+				</div>
+			</div>
+			<div class="forecast-table">
+					<div class="container">
+                            <div class="forecast-container">
+                                <div class="today forecast">
+                                    <div class="forecast-content">
+                                        <div class="location">Unknown</div>
+                                        <div class="degree">
+                                            <div class="num"><i class="loadTemp">0</i><sup>o</sup><i class="loadLetter">F</i></div>
+                                            <div class="forecast-icon">
+                                            </div>	
+                                        </div>
+                                        <div class="degree"> <button><i id="f">F</i> -|- <i id="c">C</i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="forecast forecast-head">
+                                    <div class="forecast-header">
+                                        <div class="day">Humidity</div>
+                                    </div>
+                                    <div class="forecast-content">
+                                        <div class="forecast-icon">
+                                            <img src="img/icon-3.svg" alt="icon3">
+                                        </div>
+                                        <div class="degree"><i class="humidity">0</i>%</div>
+                                    </div>
+                                </div>
+                                <div class="forecast forecast-head">
+                                    <div class="forecast-header">
+                                        <div class="day">Wind</div>
+                                    </div>
+                                    <div class="forecast-content">
+                                        <div class="forecast-icon">
+                                            <img src="img/icon-2.svg" alt="icon2">
+                                        </div>
+                                        <div class="degree"><i class="wind">0</i> mph</div>
+                                    </div>
+                                </div>
+                                <div class="forecast forecast-head">
+                                    <div class="forecast-header">
+                                        <div class="day">Pressure</div>
+                                    </div>
+                                    <div class="forecast-content">
+                                        <div class="forecast-icon">
+                                            <img src="img/icon-4.svg" alt="icon4">
+                                        </div>
+                                        <div class="degree"><i class="pressure">0</i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+				<img class="background" src="img/lenticular-cloud.jpg" alt="background-img">
+			</div>
+			
+			<footer class="site-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-md-offset-1">
+							<div class="social-links">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+								<a href="#"><i class="fa fa-pinterest"></i></a>
+							</div>
+						</div>
+					</div>
 
-    <script src="main.js"></script>
+					<p class="colophon">Copyright 2019 Microverse Student Project. Designed by Bellom. All rights reserved</p>
+				</div>
+			</footer> 
+		</div>
 
-</body>
+		<script src="main.js"></script>
+
+	</body>
+
 </html>
